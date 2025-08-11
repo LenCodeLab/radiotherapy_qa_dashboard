@@ -3,9 +3,9 @@ services:
     name: radiotherapy-qa-dashboard
     env: python
     plan: free
-    root: "."                    # This tells Render to use repo root
+    root: "."  # Use repo root
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    startCommand: streamlit run app/main.py --server.address 0.0.0.0 --server.port $PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
