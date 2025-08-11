@@ -3,9 +3,10 @@ services:
     name: radiotherapy-qa-dashboard
     env: python
     plan: free
-    root: "."  # Use repo root
-    buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app/main.py --server.address 0.0.0.0 --server.port $PORT
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: streamlit run app/main.py --server.address 0.0.0.0 --server.port $PORT --server.headless true
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
