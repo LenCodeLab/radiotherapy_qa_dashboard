@@ -11,7 +11,7 @@ import seaborn as sns
 # ----------------------------
 # Page config
 # ----------------------------
-st.set_page_config(page_title="Radiotherapy QA Dashboard", page_icon="💡", layout="wide")
+st.set_page_config(page_title="Radiotherapy QA Dashboard", page_icon="📊", layout="wide")
 sns.set_style("whitegrid")
 
 st.title("📊 Radiotherapy QA Dashboard")
@@ -22,7 +22,6 @@ st.markdown("Monitor LINAC QA checks, see alerts, and get quick insights.")
 # ----------------------------
 # Use your absolute CSV path
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "processed", "qa_cleaned_with_alerts.csv")
-
 @st.cache_data
 def load_data(path):
     if not os.path.exists(path):
