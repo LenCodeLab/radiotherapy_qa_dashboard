@@ -21,7 +21,7 @@ st.markdown("Monitor LINAC QA checks, see alerts, and get quick insights.")
 # Paths & Safe load
 # ----------------------------
 # Use your absolute CSV path
-DATA_PATH = "/home/lenix/myenv/projects/radiotherapy_qa_dashboard/data/processed/qa_cleaned_with_alerts.csv"
+DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "processed", "qa_cleaned_with_alerts.csv")
 
 @st.cache_data
 def load_data(path):
